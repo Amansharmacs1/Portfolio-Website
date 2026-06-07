@@ -57,6 +57,13 @@ const Hero = () => {
               View Projects <ArrowRight size={18} />
             </a>
             <a
+              href="./Aman Resume new.pdf"
+              download="Aman_Sharma_Resume.pdf"
+              className="w-full sm:w-auto px-8 py-4 bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm border border-slate-200 dark:border-slate-700 hover:bg-white dark:hover:bg-slate-800 text-slate-900 dark:text-white rounded-full font-medium transition-all shadow-lg hover:scale-105 flex items-center justify-center gap-2"
+            >
+              Resume <Download size={18} />
+            </a>
+            <a
               href="#contact"
               className="w-full sm:w-auto px-8 py-4 text-slate-900 dark:text-white hover:text-primary-700 font-medium transition-all flex items-center justify-center gap-2"
             >
