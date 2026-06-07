@@ -12,7 +12,7 @@ const experienceData = [
       "Managed student engagement",
       "Coordinated events"
     ],
-    images: ["/iste1.jpeg", "/iste2.jpeg", "/iste3.jpeg", "/iste4.jpeg"]
+    images: ["./iste1.jpeg", "./iste2.jpeg", "./iste3.jpeg", "./iste4.jpeg"]
   },
   {
     role: "Campus Ambassador",
@@ -23,7 +23,7 @@ const experienceData = [
       "Built student communities",
       "Increased participation in career opportunities"
     ],
-    images: ["/unstop1.jpeg", "/unstop2.jpeg", "/unstop3.jpeg", "/unstop4.jpeg"]
+    images: ["./unstop1.jpeg", "./unstop2.jpeg", "./unstop3.jpeg", "./unstop4.jpeg"]
   }
 ];
 

@@ -30,10 +30,10 @@ const Publications = () => {
           <div className="hidden sm:block absolute top-8 right-8 z-20">
             <div className="w-32 aspect-[3/4] rounded-lg shadow-xl overflow-hidden border border-slate-200 dark:border-slate-700/50 transform group-hover:scale-105 group-hover:-rotate-2 transition-transform duration-500">
               <img 
-                src="/publication.png" 
+                src="./publication.png" 
                 alt="EduLife Publication" 
                 className="w-full h-full object-cover object-top cursor-pointer hover:opacity-90 transition-opacity" 
-                onClick={() => setSelectedImage("/publication.png")}
+                onClick={() => setSelectedImage("./publication.png")}
               />
             </div>
           </div>
@@ -42,10 +42,10 @@ const Publications = () => {
             {/* Mobile Image (Visible only on very small screens) */}
             <div className="sm:hidden mb-6 w-32 aspect-[3/4] rounded-lg shadow-lg overflow-hidden border border-slate-200 dark:border-slate-700/50">
               <img 
-                src="/publication.png" 
+                src="./publication.png" 
                 alt="EduLife Publication" 
                 className="w-full h-full object-cover object-top cursor-pointer" 
-                onClick={() => setSelectedImage("/publication.png")}
+                onClick={() => setSelectedImage("./publication.png")}
               />
             </div>
 

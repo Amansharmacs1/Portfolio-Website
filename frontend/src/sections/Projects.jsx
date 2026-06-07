@@ -6,7 +6,7 @@ const projectsData = [
   {
     title: "AuditAI",
     year: "2026",
-    image: "/auditai.png",
+    image: "./auditai.png",
     description: "AI-powered spend optimization platform that analyzes subscriptions like ChatGPT, Claude, Gemini, Cursor, and GitHub Copilot to identify unnecessary AI expenses and recommend cost-saving alternatives.",
     features: ["Gemini AI Integration", "Public Shareable Audit URLs", "Passwordless Authentication", "PDF Export", "Audit History Tracking", "Cost Optimization Engine", "REST APIs"],
     tech: ["MongoDB", "Express.js", "React.js", "Node.js", "Gemini AI"],
@@ -16,7 +16,7 @@ const projectsData = [
   {
     title: "WanderStay",
     year: "2025",
-    image: "/wanderstay.png",
+    image: "./wanderstay.png",
     description: "Full-stack travel accommodation platform inspired by Airbnb.",
     features: ["JWT Authentication", "Role-Based Access Control", "Property Listings", "REST APIs", "Docker Containerization", "CI/CD using GitHub Actions", "Render Deployment"],
     tech: ["MongoDB", "Express.js", "React.js", "Node.js", "Docker"],
@@ -26,7 +26,7 @@ const projectsData = [
   {
     title: "Zerodha Clone",
     year: "2025",
-    image: "/zerodha.jpeg",
+    image: "./zerodha.jpeg",
     description: "Developed a full-stack stock trading platform inspired by Zerodha, providing users with a seamless experience for portfolio management, market tracking, and stock transactions.",
     features: ["Portfolio Dashboard", "Stock Watchlist", "Buy/Sell Order Simulation", "Interactive Charts", "Holdings Tracking"],
     tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Chart.js", "Tailwind CSS"],
@@ -35,7 +35,7 @@ const projectsData = [
   {
     title: "EduLife",
     year: "2025",
-    image: "/edulife.png",
+    image: "./edulife.png",
     description: "AI-powered voice assistant designed for students to improve productivity and automate academic tasks.",
     features: ["Speech Recognition", "NLP-Based Interaction", "Workflow Automation", "Voice Command Processing", "Research Publication"],
     tech: ["Python", "Speech Recognition", "AI/ML"],
@@ -44,7 +44,7 @@ const projectsData = [
   {
     title: "Dragon Escape",
     year: "2025",
-    image: "/dragon.jpeg",
+    image: "./dragon.jpeg",
     description: "Interactive 2D adventure game where players navigate obstacles, collect rewards, and escape from a dragon through progressively challenging levels.",
     features: ["Character Movement", "Collision Detection", "Score Tracking", "Multiple Difficulty Levels", "Animation Loops"],
     tech: ["JavaScript", "HTML5", "CSS3", "Canvas API"],
