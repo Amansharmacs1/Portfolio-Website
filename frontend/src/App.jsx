@@ -29,7 +29,7 @@ function App() {
   };
 
   return (
-    <Router>
+    <Router basename="/Portfolio-Website">
       <div className="min-h-screen bg-[#f5f5f7] dark:bg-black font-sans transition-colors duration-300">
         <Navbar darkMode={darkMode} toggleTheme={toggleTheme} />
         <main>
