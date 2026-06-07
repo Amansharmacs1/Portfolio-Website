@@ -19,12 +19,6 @@ export default defineConfig({
         '..',
         '/Users/amansharma/.gemini/antigravity/brain/tempmediaStorage'
       ]
-    },
-    proxy: {
-      '/api': {
-        target: 'http://localhost:5001',
-        changeOrigin: true,
-      },
-    },
+    }
   },
 });
