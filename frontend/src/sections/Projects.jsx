@@ -42,13 +42,14 @@ const projectsData = [
     github: "https://github.com/Amansharmacs1/EDULIFE-ai-voice-assistant"
   },
   {
-    title: "Dragon Escape",
-    year: "2025",
-    image: "./dragon.jpeg",
-    description: "Interactive 2D adventure game where players navigate obstacles, collect rewards, and escape from a dragon through progressively challenging levels.",
-    features: ["Character Movement", "Collision Detection", "Score Tracking", "Multiple Difficulty Levels", "Animation Loops"],
-    tech: ["JavaScript", "HTML5", "CSS3", "Canvas API"],
-    github: "https://github.com/Amansharmacs1/Dragon-Escape"
+    title: "EventSphere",
+    year: "2026",
+    image: "./eventsphere.png",
+    description: "A comprehensive event management platform to discover, create, and manage events effortlessly.",
+    features: ["Event Discovery", "Ticketing System", "User Authentication", "Dashboard Management", "Responsive Design"],
+    tech: ["MongoDB", "Express.js", "React.js", "Node.js", "Tailwind CSS"],
+    live: "https://event-sphere-gules.vercel.app/",
+    github: "https://github.com/Amansharmacs1/EventSphere"
   }
 ];
 
