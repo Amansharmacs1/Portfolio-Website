@@ -6,7 +6,7 @@ const projectsData = [
   {
     title: "otpcraft",
     year: "2026",
-    image: "",
+    image: "./otpcraft.png",
     description: "A modern, secure, and zero-dependency OTP toolkit for Node.js. It features secure generation, timing-safe validation, timed tokens, and hashing.",
     features: ["Secure Random Generation", "Timing-Safe Validation", "Zero Dependencies", "Custom Formatting", "SHA-256 Hashing"],
     tech: ["Node.js", "JavaScript", "Crypto", "npm"],
