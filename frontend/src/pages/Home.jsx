@@ -7,6 +7,7 @@ import Experience from '../sections/Experience';
 import Publications from '../sections/Publications';
 import Achievements from '../sections/Achievements';
 import Contact from '../sections/Contact';
+import OpenSource from '../sections/OpenSource';
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       <About />
       <Skills />
       <Projects />
+      <OpenSource />
       <Experience />
       <Publications />
       <Achievements />

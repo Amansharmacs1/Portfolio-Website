@@ -4,16 +4,6 @@ import { Github, ExternalLink, X } from 'lucide-react';
 
 const projectsData = [
   {
-    title: "otpcraft",
-    year: "2026",
-    image: "./otpcraft.png",
-    description: "A modern, secure, and zero-dependency OTP toolkit for Node.js. It features secure generation, timing-safe validation, timed tokens, and hashing.",
-    features: ["Secure Random Generation", "Timing-Safe Validation", "Zero Dependencies", "Custom Formatting", "SHA-256 Hashing"],
-    tech: ["Node.js", "JavaScript", "Crypto", "npm"],
-    live: "https://www.npmjs.com/package/otpcraft",
-    github: "https://github.com/Amansharmacs1/otpcraft"
-  },
-  {
     title: "AuditAI",
     year: "2026",
     image: "./auditai.png",
