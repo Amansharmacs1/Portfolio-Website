@@ -94,12 +94,12 @@ const Projects = () => {
                 <div className="absolute inset-0 bg-primary-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20"></div>
                 <div className="w-full aspect-video rounded-xl shadow-2xl bg-white dark:bg-slate-900 overflow-hidden relative z-10 transform group-hover:scale-105 transition-transform duration-500 flex items-center justify-center">
                   {project.image ? (
-                    <img 
-                      src={project.image} 
-                      alt={project.title} 
-                      className="w-full h-full object-cover object-top cursor-pointer" 
-                      onClick={() => setSelectedImage(project.image)}
-                    />
+                      <img 
+                        src={project.image} 
+                        alt={project.title} 
+                        className={`w-full h-full cursor-pointer ${project.title === 'otpcraft' ? 'object-contain object-center bg-slate-900' : 'object-cover object-top'}`}
+                        onClick={() => setSelectedImage(project.image)}
+                      />
                   ) : (
                     <span className="text-3xl font-heading font-bold text-slate-300 dark:text-slate-700">{project.title}</span>
                   )}
