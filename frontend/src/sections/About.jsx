@@ -38,7 +38,7 @@ const About = () => {
             </div>
             <div className="flex flex-col">
               <span className="text-sm text-slate-500 dark:text-slate-400 font-medium uppercase tracking-wider mb-1">CGPA</span>
-              <span className="text-primary-500 font-heading font-bold text-2xl">9.5/10</span>
+              <span className="text-primary-500 font-heading font-bold text-2xl">9.58/10</span>
             </div>
           </div>
         </motion.div>
