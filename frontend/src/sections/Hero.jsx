@@ -32,8 +32,8 @@ const Hero = () => {
             className="w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-full overflow-hidden mb-6 md:mb-8 border-4 border-white dark:border-primary-500 shadow-2xl shadow-primary-200 dark:shadow-none mx-auto"
           >
             <img 
-              src="./code_logo.jpeg" 
-              alt="Code Logo" 
+              src="./profile%20pic.jpeg" 
+              alt="Aman Sharma" 
               className="w-full h-full object-cover"
             />
           </motion.div>
