@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Trophy, Code, Briefcase, Award, GraduationCap, FileBadge, CheckCircle, ShieldCheck } from 'lucide-react';
 
 const achievementsData = [
-  { icon: <Code size={24} />, title: "150+ Problems Solved", subtitle: "on LeetCode" },
+  { icon: <Code size={24} />, title: "200+ Problems Solved", subtitle: "on LeetCode" },
   { icon: <GraduationCap size={24} />, title: "CGPA: 9.58/10", subtitle: "Chitkara University" },
   { icon: <Briefcase size={24} />, title: "Built Full Stack Projects", subtitle: "MERN Stack & AI" },
   { icon: <Award size={24} />, title: "Leadership Roles", subtitle: "Unstop & ISTE" },
