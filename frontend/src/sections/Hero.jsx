@@ -15,8 +15,9 @@ const Hero = () => {
 
   return (
     <section ref={ref} id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      <motion.div style={{ y: yBg, opacity }} className="absolute inset-0 flex items-center justify-center -z-10 opacity-30 dark:opacity-10">
-        <div className="w-[800px] h-[800px] bg-gradient-to-br from-primary-200 to-transparent rounded-full filter blur-[100px]"></div>
+      <motion.div style={{ y: yBg, opacity }} className="absolute inset-0 -z-10">
+        <div className="absolute inset-0 bg-white/70 dark:bg-black/70 z-10 backdrop-blur-[2px]"></div>
+        <img src="./code_hero_bg.jpg" alt="Code Background" className="w-full h-full object-cover opacity-60 dark:opacity-40" />
       </motion.div>
 
       <div className="relative z-10 max-w-5xl mx-auto text-center px-4 sm:px-6 lg:px-8 mt-16">
@@ -31,8 +32,8 @@ const Hero = () => {
             className="w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-full overflow-hidden mb-6 md:mb-8 border-4 border-white dark:border-primary-500 shadow-2xl shadow-primary-200 dark:shadow-none mx-auto"
           >
             <img 
-              src="./profile%20pic.jpeg" 
-              alt="Aman Sharma" 
+              src="./code_logo.jpeg" 
+              alt="Code Logo" 
               className="w-full h-full object-cover"
             />
           </motion.div>

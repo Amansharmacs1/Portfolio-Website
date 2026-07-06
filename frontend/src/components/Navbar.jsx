@@ -26,7 +26,8 @@ const Navbar = ({ darkMode, toggleTheme }) => {
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'py-4 glass' : 'py-6 bg-transparent'}`}>
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        <a href="#home" className="text-2xl font-heading font-extrabold text-slate-900 dark:text-white tracking-tighter">
+        <a href="#home" className="flex items-center gap-3 text-2xl font-heading font-extrabold text-slate-900 dark:text-white tracking-tighter">
+          <img src="./code_logo.jpeg" alt="Logo" className="w-8 h-8 rounded-md object-cover" />
           Aman Sharma
         </a>
 
