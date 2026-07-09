@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,6 +7,13 @@
 @layer base {
   body {
     @apply antialiased selection:bg-primary-500 selection:text-white;
+  }
+
+  /* Hide default cursor on devices with a mouse */
+  @media (pointer: fine) {
+    * {
+      cursor: none !important;
+    }
   }
 }
 

@@ -1,6 +1,8 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, Download, Mail } from 'lucide-react';
+
+const roles = ["Software Engineer", "AI Engineer", "Full Stack Developer"];
 
 const Hero = () => {
   const ref = useRef(null);
@@ -8,6 +10,36 @@ const Hero = () => {
     target: ref,
     offset: ["start start", "end start"]
   });
+
+  const [displayText, setDisplayText] = useState("");
+  const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const currentWord = roles[currentRoleIndex];
+    let timeout;
+    
+    if (!isDeleting) {
+      if (displayText.length < currentWord.length) {
+        timeout = setTimeout(() => {
+          setDisplayText(currentWord.slice(0, displayText.length + 1));
+        }, 100);
+      } else {
+        timeout = setTimeout(() => setIsDeleting(true), 2000); // Wait before deleting
+      }
+    } else {
+      if (displayText.length > 0) {
+        timeout = setTimeout(() => {
+          setDisplayText(currentWord.slice(0, displayText.length - 1));
+        }, 50); // Delete faster
+      } else {
+        setIsDeleting(false);
+        setCurrentRoleIndex((prev) => (prev + 1) % roles.length);
+      }
+    }
+
+    return () => clearTimeout(timeout);
+  }, [displayText, isDeleting, currentRoleIndex]);
 
   const yBg = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
   const yText = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
@@ -20,10 +52,10 @@ const Hero = () => {
         <img src="./code_hero_bg.jpg" alt="Code Background" className="w-full h-full object-cover opacity-60 dark:opacity-40" />
       </motion.div>
 
-      <div className="relative z-10 max-w-5xl mx-auto text-center px-4 sm:px-6 lg:px-8 mt-16">
+      <div className="relative z-10 max-w-5xl mx-auto text-center px-4 sm:px-6 lg:px-8 mt-16 w-full">
         <motion.div
           style={{ y: yText, opacity }}
-          className="flex flex-col items-center"
+          className="flex flex-col items-center w-full"
         >
           <motion.div 
             initial={{ opacity: 0, scale: 0.8 }}
@@ -63,14 +95,21 @@ const Hero = () => {
               </motion.span>
             ))}
             <br/>
-            <motion.span 
-              initial={{ opacity: 0, filter: "blur(10px)" }}
-              animate={{ opacity: 1, filter: "blur(0px)" }}
-              transition={{ delay: 1.2, duration: 0.8 }}
-              className="text-slate-500 dark:text-slate-400 inline-block"
-            >
-              Software Engineer
-            </motion.span>
+            
+            <div className="h-[1.5em] relative flex justify-center w-full mt-2 lg:mt-4 items-center">
+              <span 
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl uppercase tracking-[0.1em] font-bold text-primary-600 dark:text-primary-400 drop-shadow-sm dark:drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]"
+                style={{ fontFamily: "'VT323', monospace" }}
+              >
+                {displayText}
+                <motion.span
+                  animate={{ opacity: [1, 0] }}
+                  transition={{ repeat: Infinity, duration: 0.8, ease: "linear" }}
+                  className="inline-block w-3 md:w-5 h-8 md:h-12 bg-primary-600 dark:bg-primary-400 ml-1 align-middle mb-2 md:mb-3 shadow-sm dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]"
+                ></motion.span>
+              </span>
+            </div>
+
           </motion.h1>
           <p className="mt-4 text-lg sm:text-xl md:text-2xl text-slate-500 dark:text-slate-400 mb-8 md:mb-10 max-w-2xl mx-auto font-light px-2 sm:px-0">
             Crafting premium, scalable, and dynamic web experiences with an obsession for detail.

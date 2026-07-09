@@ -50,6 +50,15 @@ const projectsData = [
     tech: ["MongoDB", "Express.js", "React.js", "Node.js", "Tailwind CSS"],
     live: "https://event-sphere-gules.vercel.app/",
     github: "https://github.com/Amansharmacs1/EventSphere"
+  },
+  {
+    title: "validatorcraft",
+    year: "2026",
+    image: null,
+    description: "An open-source NPM package providing robust data validation utilities.",
+    features: ["Data Validation", "Open Source Contribution", "Lightweight", "NPM Registry"],
+    tech: ["Node.js", "JavaScript", "NPM"],
+    live: "https://www.npmjs.com/package/validatorcraft"
   }
 ];
 
