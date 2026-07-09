@@ -74,15 +74,30 @@ const Projects = () => {
           {projectsData.map((project, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={{
+                hidden: { opacity: 0, y: 100 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: {
+                    duration: 0.8,
+                    ease: [0.16, 1, 0.3, 1],
+                    staggerChildren: 0.1,
+                    delayChildren: 0.2
+                  }
+                }
+              }}
               className="glass rounded-3xl overflow-hidden flex flex-col lg:flex-row group"
             >
               <div className="lg:w-2/5 bg-slate-200 dark:bg-slate-800 p-6 sm:p-8 flex items-center justify-center relative overflow-hidden">
                 <div className="absolute inset-0 bg-primary-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20"></div>
-                <div className="w-full aspect-video rounded-xl shadow-2xl bg-white dark:bg-slate-900 overflow-hidden relative z-10 transform group-hover:scale-105 transition-transform duration-500 flex items-center justify-center">
+                <motion.div 
+                  variants={{ hidden: { scale: 0.8, opacity: 0 }, visible: { scale: 1, opacity: 1, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } } }}
+                  className="w-full aspect-video rounded-xl shadow-2xl bg-white dark:bg-slate-900 overflow-hidden relative z-10 transform group-hover:scale-105 transition-transform duration-500 flex items-center justify-center"
+                >
                   {project.image ? (
                       <img 
                         src={project.image} 
@@ -93,23 +108,23 @@ const Projects = () => {
                   ) : (
                     <span className="text-3xl font-heading font-bold text-slate-300 dark:text-slate-700">{project.title}</span>
                   )}
-                </div>
+                </motion.div>
               </div>
               <div className="lg:w-3/5 p-6 sm:p-8 md:p-10 flex flex-col justify-center">
-                <div className="flex justify-between items-start mb-4">
+                <motion.div variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0 } }} className="flex justify-between items-start mb-4">
                   <h3 className="text-2xl font-heading font-bold text-slate-900 dark:text-white group-hover:text-primary-500 transition-colors">
                     {project.title}
                   </h3>
                   <span className="text-sm font-medium px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded-full">
                     {project.year}
                   </span>
-                </div>
+                </motion.div>
                 
-                <p className="text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
+                <motion.p variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0 } }} className="text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
                   {project.description}
-                </p>
+                </motion.p>
 
-                <div className="mb-6">
+                <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} className="mb-6">
                   <h4 className="text-sm font-semibold text-slate-900 dark:text-white mb-2 uppercase tracking-wider">Key Features</h4>
                   <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                     {project.features.map((feature, idx) => (
@@ -119,9 +134,9 @@ const Projects = () => {
                       </li>
                     ))}
                   </ul>
-                </div>
+                </motion.div>
 
-                <div>
+                <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}>
                   <h4 className="text-sm font-semibold text-slate-900 dark:text-white mb-2 uppercase tracking-wider">Tech Stack</h4>
                   <div className="flex flex-wrap gap-2 mb-6">
                     {project.tech.map((tech, idx) => (
@@ -137,7 +152,7 @@ const Projects = () => {
                         href={project.github} 
                         target="_blank" 
                         rel="noopener noreferrer" 
-                        className="inline-flex items-center gap-2 px-5 py-2.5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 hover:bg-primary-500 dark:hover:bg-primary-500 hover:text-white dark:hover:text-white rounded-xl font-medium transition-colors w-fit shadow-md"
+                        className="inline-flex items-center gap-2 px-5 py-2.5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 hover:bg-primary-500 dark:hover:bg-primary-500 hover:text-white dark:hover:text-white rounded-xl font-medium transition-colors w-fit shadow-md hover:scale-105 active:scale-95"
                       >
                         <Github size={18} /> View on GitHub
                       </a>
@@ -148,13 +163,13 @@ const Projects = () => {
                         href={project.live} 
                         target="_blank" 
                         rel="noopener noreferrer" 
-                        className="inline-flex items-center gap-2 px-5 py-2.5 bg-primary-500 text-white hover:bg-black dark:hover:bg-white dark:hover:text-black rounded-xl font-medium transition-colors w-fit shadow-md"
+                        className="inline-flex items-center gap-2 px-5 py-2.5 bg-primary-500 text-white hover:bg-black dark:hover:bg-white dark:hover:text-black rounded-xl font-medium transition-colors w-fit shadow-md hover:scale-105 active:scale-95"
                       >
                         <ExternalLink size={18} /> Live Demo
                       </a>
                     )}
                   </div>
-                </div>
+                </motion.div>
               </div>
             </motion.div>
           ))}

@@ -16,8 +16,8 @@ const certificationsData = [
 ];
 
 const cardVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } }
+  hidden: { opacity: 0, y: 80, scale: 0.95 },
+  visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
 };
 
 const Achievements = () => {
@@ -27,10 +27,10 @@ const Achievements = () => {
         
         {/* Achievements Section */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 dark:text-white mb-4">Achievements</h2>
@@ -46,6 +46,7 @@ const Achievements = () => {
               whileInView="visible"
               viewport={{ once: true, margin: "-50px" }}
               whileHover={{ y: -5, scale: 1.02 }}
+              transition={{ delay: index * 0.1 }}
               className="glass relative p-6 sm:p-8 rounded-[2rem] border border-white/40 dark:border-white/5 transition-all duration-500 group overflow-hidden bg-white/40 dark:bg-slate-900/40 hover:shadow-2xl hover:shadow-primary-500/10 flex flex-col items-center text-center"
             >
               <div className="absolute -top-24 -right-24 w-48 h-48 bg-primary-500/10 rounded-full blur-3xl group-hover:bg-primary-500/20 transition-colors duration-700"></div>
@@ -61,10 +62,10 @@ const Achievements = () => {
 
         {/* Certifications Section */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 dark:text-white mb-4">Certifications</h2>

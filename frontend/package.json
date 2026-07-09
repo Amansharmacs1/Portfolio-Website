@@ -12,6 +12,7 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@studio-freight/react-lenis": "^0.0.47",
     "axios": "^1.6.8",
     "framer-motion": "^11.2.6",
     "lucide-react": "^0.378.0",

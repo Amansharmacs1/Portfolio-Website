@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ReactLenis } from '@studio-freight/react-lenis';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 
@@ -29,16 +30,18 @@ function App() {
   };
 
   return (
-    <Router>
-      <div className="min-h-screen bg-[#f5f5f7] dark:bg-black font-sans transition-colors duration-300">
-        <Navbar darkMode={darkMode} toggleTheme={toggleTheme} />
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-          </Routes>
-        </main>
-      </div>
-    </Router>
+    <ReactLenis root>
+      <Router>
+        <div className="min-h-screen overflow-x-hidden bg-[#f5f5f7] dark:bg-black font-sans transition-colors duration-300">
+          <Navbar darkMode={darkMode} toggleTheme={toggleTheme} />
+          <main>
+            <Routes>
+              <Route path="/" element={<Home />} />
+            </Routes>
+          </main>
+        </div>
+      </Router>
+    </ReactLenis>
   );
 }
 

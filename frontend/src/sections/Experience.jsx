@@ -34,10 +34,10 @@ const Experience = () => {
     <section id="experience" className="py-20 bg-slate-50 dark:bg-slate-900/30 relative">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 dark:text-white mb-4">Experience & Leadership</h2>
@@ -48,15 +48,15 @@ const Experience = () => {
           {experienceData.map((exp, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
+              initial={{ opacity: 0, x: -50, filter: "blur(5px)" }}
+              whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
               className="relative pl-8 md:pl-12"
             >
               <span className="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-primary-500 ring-4 ring-white dark:ring-slate-950"></span>
               
-              <div className="glass p-8 rounded-2xl hover:-translate-y-1 transition-transform duration-300">
+              <div className="glass p-6 sm:p-8 rounded-2xl hover:-translate-y-1 transition-transform duration-300">
                 <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
                   <div>
                     <h3 className="text-2xl font-heading font-bold text-slate-900 dark:text-white">

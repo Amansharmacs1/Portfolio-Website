@@ -38,9 +38,40 @@ const Hero = () => {
             />
           </motion.div>
 
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-heading font-extrabold text-primary-500 dark:text-white mb-4 md:mb-6 tracking-tighter leading-tight">
-            Aman Sharma <br/><span className="text-slate-500 dark:text-slate-400">Software Engineer</span>
-          </h1>
+          <motion.h1 
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: { opacity: 0 },
+              visible: {
+                opacity: 1,
+                transition: { staggerChildren: 0.08, delayChildren: 0.2 }
+              }
+            }}
+            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-heading font-extrabold text-primary-500 dark:text-white mb-4 md:mb-6 tracking-tighter leading-tight"
+          >
+            {"Aman Sharma".split("").map((char, index) => (
+              <motion.span 
+                key={index} 
+                variants={{
+                  hidden: { opacity: 0, y: 50 },
+                  visible: { opacity: 1, y: 0, transition: { type: 'spring', damping: 12, stiffness: 100 } }
+                }} 
+                className="inline-block"
+              >
+                {char === " " ? "\u00A0" : char}
+              </motion.span>
+            ))}
+            <br/>
+            <motion.span 
+              initial={{ opacity: 0, filter: "blur(10px)" }}
+              animate={{ opacity: 1, filter: "blur(0px)" }}
+              transition={{ delay: 1.2, duration: 0.8 }}
+              className="text-slate-500 dark:text-slate-400 inline-block"
+            >
+              Software Engineer
+            </motion.span>
+          </motion.h1>
           <p className="mt-4 text-lg sm:text-xl md:text-2xl text-slate-500 dark:text-slate-400 mb-8 md:mb-10 max-w-2xl mx-auto font-light px-2 sm:px-0">
             Crafting premium, scalable, and dynamic web experiences with an obsession for detail.
           </p>
