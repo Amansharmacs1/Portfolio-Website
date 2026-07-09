@@ -41,8 +41,10 @@ jobs:
 
       - name: Build
         working-directory: ./frontend
-        # The --base flag ensures assets are linked correctly when hosted on a repository subdirectory
-        run: npm run build -- --base=/Portfolio-Website/
+        # The --base flag ensures assets are linked correctly. We run vite build directly to avoid issues with npm scripts.
+        run: |
+          npx vite build --base=/Portfolio-Website/
+          cp dist/index.html dist/404.html
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
