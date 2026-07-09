@@ -13,7 +13,7 @@ const packages = [
   },
   {
     name: "validatorcraft",
-    image: null,
+    image: "./validatorcraft-logo.jpg",
     description: "A lightweight and robust open-source data validation utility for Node.js, ensuring clean, typed, and secure input handling.",
     features: ["Data Validation", "Type Safety", "Lightweight", "Zero Dependencies"],
     npmLink: "https://www.npmjs.com/package/validatorcraft",
