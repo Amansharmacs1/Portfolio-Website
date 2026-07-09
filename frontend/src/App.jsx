@@ -32,7 +32,7 @@ function App() {
 
   return (
     <ReactLenis root>
-      <Router basename={import.meta.env.BASE_URL}>
+      <Router>
         <div className="min-h-screen overflow-x-hidden bg-[#f5f5f7] dark:bg-black font-sans transition-colors duration-300">
           <CustomCursor />
           <Navbar darkMode={darkMode} toggleTheme={toggleTheme} />

@@ -41,9 +41,9 @@ jobs:
 
       - name: Build
         working-directory: ./frontend
-        # The --base flag ensures assets are linked correctly. We run vite build directly to avoid issues with npm scripts.
+        # Build without the base flag because the site uses a custom root domain (amansharma.space)
         run: |
-          npx vite build --base=/Portfolio-Website/
+          npx vite build
           cp dist/index.html dist/404.html
 
       - name: Setup Pages
