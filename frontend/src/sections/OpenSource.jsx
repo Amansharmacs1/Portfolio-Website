@@ -2,6 +2,25 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, X, Package, Github } from 'lucide-react';
 
+const packages = [
+  {
+    name: "otpcraft",
+    image: "./otpcraft.png",
+    description: "A modern, secure, and zero-dependency OTP (One-Time Password) toolkit for Node.js. It features secure generation using native cryptography, timing-safe validation, timed tokens, and built-in SHA-256 hashing.",
+    features: ["Secure Random Generation", "Timing-Safe Validation", "Zero Dependencies", "Custom Formatting", "SHA-256 Hashing"],
+    npmLink: "https://www.npmjs.com/package/otpcraft",
+    githubLink: "https://github.com/Amansharmacs1/otpcraft"
+  },
+  {
+    name: "validatorcraft",
+    image: null,
+    description: "A lightweight and robust open-source data validation utility for Node.js, ensuring clean, typed, and secure input handling.",
+    features: ["Data Validation", "Type Safety", "Lightweight", "Zero Dependencies"],
+    npmLink: "https://www.npmjs.com/package/validatorcraft",
+    githubLink: ""
+  }
+];
+
 const OpenSource = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
@@ -19,60 +38,74 @@ const OpenSource = () => {
           <div className="w-20 h-1 bg-primary-500 mx-auto rounded-full"></div>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 50, scale: 0.95 }}
-          whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="glass p-8 md:p-12 rounded-3xl relative overflow-hidden group border border-slate-200 dark:border-slate-800"
-        >
-          <div className="relative z-10 flex flex-col md:flex-row gap-8 items-center">
-            
-            {/* Image Thumbnail */}
-            <div className="w-full md:w-1/3 aspect-square rounded-2xl shadow-xl overflow-hidden bg-slate-900 flex-shrink-0 border border-slate-200 dark:border-slate-700/50 transform group-hover:scale-105 transition-transform duration-500">
-              <img 
-                src="./otpcraft.png" 
-                alt="otpcraft npm package" 
-                className="w-full h-full object-contain object-center cursor-pointer p-4" 
-                onClick={() => setSelectedImage("./otpcraft.png")}
-              />
-            </div>
+        <div className="flex flex-col gap-12">
+          {packages.map((pkg, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 50, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, delay: index * 0.2, ease: [0.16, 1, 0.3, 1] }}
+              className="glass p-8 md:p-12 rounded-3xl relative overflow-hidden group border border-slate-200 dark:border-slate-800"
+            >
+              <div className="relative z-10 flex flex-col md:flex-row gap-8 items-center">
+                
+                {/* Image Thumbnail */}
+                <div className="w-full md:w-1/3 aspect-square rounded-2xl shadow-xl overflow-hidden bg-slate-900 flex flex-col items-center justify-center flex-shrink-0 border border-slate-200 dark:border-slate-700/50 transform group-hover:scale-105 transition-transform duration-500">
+                  {pkg.image ? (
+                    <img 
+                      src={pkg.image} 
+                      alt={`${pkg.name} npm package`} 
+                      className="w-full h-full object-contain object-center cursor-pointer p-4" 
+                      onClick={() => setSelectedImage(pkg.image)}
+                    />
+                  ) : (
+                    <div className="flex flex-col items-center justify-center p-6 text-center">
+                      <Package className="text-slate-500 dark:text-slate-400 mb-4" size={48} />
+                      <span className="text-2xl font-heading font-bold text-slate-300 dark:text-slate-600">{pkg.name}</span>
+                    </div>
+                  )}
+                </div>
 
-            <div className="w-full md:w-2/3">
-              <div className="flex items-center gap-3 mb-2">
-                <Package className="text-primary-500" size={28} />
-                <h3 className="text-2xl md:text-3xl font-heading font-bold text-slate-900 dark:text-white">
-                  otpcraft
-                </h3>
-              </div>
-              <p className="text-primary-500 font-medium mb-6">Published npm Package</p>
+                <div className="w-full md:w-2/3">
+                  <div className="flex items-center gap-3 mb-2">
+                    <Package className="text-primary-500" size={28} />
+                    <h3 className="text-2xl md:text-3xl font-heading font-bold text-slate-900 dark:text-white">
+                      {pkg.name}
+                    </h3>
+                  </div>
+                  <p className="text-primary-500 font-medium mb-6">Published npm Package</p>
 
-              <p className="text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
-                A modern, secure, and zero-dependency OTP (One-Time Password) toolkit for Node.js. It features secure generation using native cryptography, timing-safe validation, timed tokens, and built-in SHA-256 hashing.
-              </p>
-              
-              <div className="mb-8">
-                <h4 className="text-sm font-semibold text-slate-900 dark:text-white mb-3 uppercase tracking-wider">Key Features</h4>
-                <div className="flex flex-wrap gap-2">
-                  {["Secure Random Generation", "Timing-Safe Validation", "Zero Dependencies", "Custom Formatting", "SHA-256 Hashing"].map((feature, idx) => (
-                    <span key={idx} className="px-4 py-1.5 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-sm font-medium rounded-full border border-slate-200 dark:border-slate-700">
-                      {feature}
-                    </span>
-                  ))}
+                  <p className="text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
+                    {pkg.description}
+                  </p>
+                  
+                  <div className="mb-8">
+                    <h4 className="text-sm font-semibold text-slate-900 dark:text-white mb-3 uppercase tracking-wider">Key Features</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {pkg.features.map((feature, idx) => (
+                        <span key={idx} className="px-4 py-1.5 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-sm font-medium rounded-full border border-slate-200 dark:border-slate-700">
+                          {feature}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="flex flex-wrap gap-4 pt-4 border-t border-slate-200 dark:border-slate-800">
+                    <a href={pkg.npmLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-white bg-[#CB3837] hover:bg-[#ab2b2a] px-6 py-3 rounded-xl font-medium transition-colors shadow-md w-fit">
+                      <Package size={18} /> View on npm
+                    </a>
+                    {pkg.githubLink && (
+                      <a href={pkg.githubLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-slate-900 dark:text-white bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700 px-6 py-3 rounded-xl font-medium transition-colors shadow-sm w-fit">
+                        <Github size={18} /> Source Code
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div>
-
-              <div className="flex flex-wrap gap-4 pt-4 border-t border-slate-200 dark:border-slate-800">
-                <a href="https://www.npmjs.com/package/otpcraft" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-white bg-[#CB3837] hover:bg-[#ab2b2a] px-6 py-3 rounded-xl font-medium transition-colors shadow-md w-fit">
-                  <Package size={18} /> View on npm
-                </a>
-                <a href="https://github.com/Amansharmacs1/otpcraft" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-slate-900 dark:text-white bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700 px-6 py-3 rounded-xl font-medium transition-colors shadow-sm w-fit">
-                  <Github size={18} /> Source Code
-                </a>
-              </div>
-            </div>
-          </div>
-        </motion.div>
+            </motion.div>
+          ))}
+        </div>
       </div>
 
       {/* Full Screen Image Lightbox Modal */}
