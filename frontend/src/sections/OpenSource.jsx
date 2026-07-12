@@ -5,19 +5,23 @@ import { ExternalLink, X, Package, Github } from 'lucide-react';
 const packages = [
   {
     name: "otpcraft",
+    subtitle: "PUBLISHED NPM PACKAGE",
     image: "./otpcraft.png",
     description: "A modern, secure, and zero-dependency OTP (One-Time Password) toolkit for Node.js. It features secure generation using native cryptography, timing-safe validation, timed tokens, and built-in SHA-256 hashing.",
     features: ["Secure Random Generation", "Timing-Safe Validation", "Zero Dependencies", "Custom Formatting", "SHA-256 Hashing"],
+    tech: ["Node.js", "JavaScript", "NPM"],
     npmLink: "https://www.npmjs.com/package/otpcraft",
     githubLink: "https://github.com/Amansharmacs1/otpcraft"
   },
   {
     name: "validatorcraft",
+    subtitle: "PUBLISHED NPM PACKAGE",
     image: "./validatorcraft-logo.jpg",
     description: "A lightweight and robust open-source data validation utility for Node.js, ensuring clean, typed, and secure input handling.",
     features: ["Data Validation", "Type Safety", "Lightweight", "Zero Dependencies"],
+    tech: ["Node.js", "JavaScript", "NPM"],
     npmLink: "https://www.npmjs.com/package/validatorcraft",
-    githubLink: ""
+    githubLink: "https://github.com/Amansharmacs1/validatorcraft"
   }
 ];
 
@@ -25,82 +29,98 @@ const OpenSource = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   return (
-    <section id="opensource" className="py-20 relative bg-slate-50 dark:bg-slate-900/50">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="opensource" className="py-24 relative bg-slate-50 dark:bg-black transition-colors duration-300">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="text-center mb-16"
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-20"
         >
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 dark:text-white mb-4">Open Source Contributions</h2>
-          <div className="w-20 h-1 bg-primary-500 mx-auto rounded-full"></div>
+          <h2 className="text-3xl md:text-5xl font-heading font-bold text-slate-900 dark:text-white mb-6">Open Source Contributions</h2>
+          <div className="w-20 h-1 bg-primary-500 dark:bg-[#00d8ff] mx-auto rounded-full"></div>
         </motion.div>
 
-        <div className="flex flex-col gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           {packages.map((pkg, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 50, scale: 0.95 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, delay: index * 0.2, ease: [0.16, 1, 0.3, 1] }}
-              className="glass p-8 md:p-12 rounded-3xl relative overflow-hidden group border border-slate-200 dark:border-slate-800"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+              className="bg-white dark:bg-[#0a0a0a] border border-slate-200 dark:border-white/[0.05] hover:border-slate-300 dark:hover:border-white/[0.1] rounded-[2rem] p-5 sm:p-7 flex flex-col h-full group hover:bg-slate-50 dark:hover:bg-[#0f1115] transition-all duration-300 shadow-xl dark:shadow-2xl relative overflow-hidden"
             >
-              <div className="relative z-10 flex flex-col md:flex-row gap-8 items-center">
-                
-                {/* Image Thumbnail */}
-                <div className="w-full md:w-1/3 aspect-square rounded-2xl shadow-xl overflow-hidden bg-slate-900 flex flex-col items-center justify-center flex-shrink-0 border border-slate-200 dark:border-slate-700/50 transform group-hover:scale-105 transition-transform duration-500">
-                  {pkg.image ? (
-                    <img 
-                      src={pkg.image} 
-                      alt={`${pkg.name} npm package`} 
-                      className="w-full h-full object-contain object-center cursor-pointer p-4" 
-                      onClick={() => setSelectedImage(pkg.image)}
-                    />
-                  ) : (
-                    <div className="flex flex-col items-center justify-center p-6 text-center">
-                      <Package className="text-slate-500 dark:text-slate-400 mb-4" size={48} />
-                      <span className="text-2xl font-heading font-bold text-slate-300 dark:text-slate-600">{pkg.name}</span>
-                    </div>
-                  )}
-                </div>
+              {/* Subtle hover glow effect (Dark mode only) */}
+              <div className="absolute top-0 right-0 w-64 h-64 bg-primary-500 dark:bg-[#00d8ff] opacity-0 group-hover:opacity-[0.03] blur-[80px] rounded-full transition-opacity duration-500 pointer-events-none"></div>
 
-                <div className="w-full md:w-2/3">
-                  <div className="flex items-center gap-3 mb-2">
-                    <Package className="text-primary-500" size={28} />
-                    <h3 className="text-2xl md:text-3xl font-heading font-bold text-slate-900 dark:text-white">
-                      {pkg.name}
-                    </h3>
+              {/* Header Row */}
+              <div className="flex justify-between items-start mb-6">
+                <span className="text-[10px] sm:text-xs font-bold text-primary-600 dark:text-[#00d8ff] uppercase tracking-widest w-3/4 leading-relaxed">
+                  {pkg.subtitle}
+                </span>
+                {pkg.githubLink && (
+                  <a 
+                    href={pkg.githubLink} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 rounded-full bg-slate-50 dark:bg-[#161616] flex items-center justify-center text-slate-400 hover:text-slate-700 dark:hover:text-white transition-colors border border-slate-200 dark:border-white/[0.05] hover:border-slate-300 dark:hover:border-white/[0.2] flex-shrink-0 relative z-10"
+                  >
+                    <Github size={18} />
+                  </a>
+                )}
+              </div>
+
+              {/* Title & Image */}
+              <div className="flex items-center gap-5 mb-6">
+                {pkg.image ? (
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 rounded-2xl overflow-hidden bg-slate-100 dark:bg-[#111] border border-slate-200 dark:border-white/[0.05] p-2 relative z-10 cursor-pointer hover:scale-105 transition-transform duration-300" onClick={() => setSelectedImage(pkg.image)}>
+                    <img src={pkg.image} alt={pkg.name} className="w-full h-full object-contain" />
                   </div>
-                  <p className="text-primary-500 font-medium mb-6">Published npm Package</p>
-
-                  <p className="text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
-                    {pkg.description}
-                  </p>
-                  
-                  <div className="mb-8">
-                    <h4 className="text-sm font-semibold text-slate-900 dark:text-white mb-3 uppercase tracking-wider">Key Features</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {pkg.features.map((feature, idx) => (
-                        <span key={idx} className="px-4 py-1.5 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-sm font-medium rounded-full border border-slate-200 dark:border-slate-700">
-                          {feature}
-                        </span>
-                      ))}
-                    </div>
+                ) : (
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 rounded-2xl overflow-hidden bg-slate-100 dark:bg-[#111] border border-slate-200 dark:border-white/[0.05] flex items-center justify-center relative z-10">
+                    <Package className="text-slate-400 dark:text-slate-600" size={32} />
                   </div>
+                )}
+                <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">
+                  {pkg.name}
+                </h3>
+              </div>
 
-                  <div className="flex flex-wrap gap-4 pt-4 border-t border-slate-200 dark:border-slate-800">
-                    <a href={pkg.npmLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-white bg-[#CB3837] hover:bg-[#ab2b2a] px-6 py-3 rounded-xl font-medium transition-colors shadow-md w-fit">
-                      <Package size={18} /> View on npm
+              {/* Features */}
+              <ul className="space-y-3 mb-6 flex-grow relative z-10">
+                {pkg.features.map((feature, idx) => (
+                  <li key={idx} className="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                    <svg className="w-5 h-5 text-primary-500 dark:text-teal-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              {/* Tech Stack & NPM Link */}
+              <div className="mt-auto pt-6 border-t border-slate-200 dark:border-white/[0.05] relative z-10">
+                <h4 className="text-[10px] font-bold text-slate-500 mb-4 flex items-center gap-2">
+                  <span className="font-mono">{'</>'}</span> TECH STACK
+                </h4>
+                <div className="flex flex-wrap gap-2">
+                  {pkg.tech.map((t, idx) => (
+                    <span key={idx} className="px-3 py-1.5 bg-slate-100 dark:bg-[#111] border border-slate-200 dark:border-white/[0.05] text-[10px] font-semibold tracking-wider text-slate-600 dark:text-slate-400 rounded-lg">
+                      {t.toUpperCase()}
+                    </span>
+                  ))}
+                  {pkg.npmLink && (
+                    <a 
+                      href={pkg.npmLink}
+                      target="_blank"
+                      rel="noopener noreferrer" 
+                      className="px-3 py-1.5 bg-[#CB3837]/10 border border-[#CB3837]/20 text-[10px] font-bold tracking-wider text-[#CB3837] rounded-lg hover:bg-[#CB3837]/20 transition-colors ml-auto flex items-center gap-1"
+                    >
+                      VIEW ON NPM <ExternalLink size={12} />
                     </a>
-                    {pkg.githubLink && (
-                      <a href={pkg.githubLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-slate-900 dark:text-white bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700 px-6 py-3 rounded-xl font-medium transition-colors shadow-sm w-fit">
-                        <Github size={18} /> Source Code
-                      </a>
-                    )}
-                  </div>
+                  )}
                 </div>
               </div>
             </motion.div>

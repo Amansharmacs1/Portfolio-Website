@@ -5,51 +5,90 @@ import { Github, ExternalLink, X } from 'lucide-react';
 const projectsData = [
   {
     title: "AuditAI",
+    subtitle: "AI-DRIVEN SPEND OPTIMIZATION PLATFORM",
     year: "2026",
     image: "./auditai.png",
     description: "AI-powered spend optimization platform that analyzes subscriptions like ChatGPT, Claude, Gemini, Cursor, and GitHub Copilot to identify unnecessary AI expenses and recommend cost-saving alternatives.",
-    features: ["Gemini AI Integration", "Public Shareable Audit URLs", "Passwordless Authentication", "PDF Export", "Audit History Tracking", "Cost Optimization Engine", "REST APIs"],
+    features: [
+      "Led the development of a full-stack spend optimization platform integrating Gemini AI to identify unnecessary AI subscriptions.",
+      "Implemented a secure passwordless authentication system and public shareable audit URLs for easy reporting.",
+      "Built a powerful cost optimization engine with real-time PDF exports and audit history tracking."
+    ],
     tech: ["MongoDB", "Express.js", "React.js", "Node.js", "Gemini AI"],
     live: "https://audit-ai-nu.vercel.app",
     github: "https://github.com/Amansharmacs1/AuditAi"
   },
   {
     title: "WanderStay",
+    subtitle: "FULL-STACK TRAVEL ACCOMMODATION PLATFORM",
     year: "2025",
     image: "./wanderstay.png",
     description: "Full-stack travel accommodation platform inspired by Airbnb.",
-    features: ["JWT Authentication", "Role-Based Access Control", "Property Listings", "REST APIs", "Docker Containerization", "CI/CD using GitHub Actions", "Render Deployment"],
+    features: [
+      "Built a comprehensive travel accommodation platform inspired by Airbnb with advanced property listing and booking features.",
+      "Designed a robust client-server architecture utilizing Docker containerization for reliable deployment.",
+      "Implemented JWT authentication, role-based access control, and automated CI/CD pipelines via GitHub Actions."
+    ],
     tech: ["MongoDB", "Express.js", "React.js", "Node.js", "Docker"],
     live: "https://wanderstay-ot8f.onrender.com/",
     github: "https://github.com/Amansharmacs1/WanderStay"
   },
   {
-    title: "Zerodha Clone",
-    year: "2025",
-    image: "./zerodha.jpeg",
-    description: "Developed a full-stack stock trading platform inspired by Zerodha, providing users with a seamless experience for portfolio management, market tracking, and stock transactions.",
-    features: ["Portfolio Dashboard", "Stock Watchlist", "Buy/Sell Order Simulation", "Interactive Charts", "Holdings Tracking"],
-    tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Chart.js", "Tailwind CSS"],
-    github: "https://github.com/Amansharmacs1/Zerodha-Clone"
+    title: "RentWheels",
+    subtitle: "PEER-TO-PEER VEHICLE RENTAL PLATFORM",
+    year: "2026",
+    image: "./rentwheels.png",
+    description: "A premium peer-to-peer vehicle rental platform allowing users to rent vehicles from trusted owners or share their own cars to earn money.",
+    features: [
+      "Built a comprehensive peer-to-peer vehicle rental platform connecting owners with renters seamlessly.",
+      "Implemented a secure user authentication system with dedicated flows for exploring vehicles and managing rentals.",
+      "Designed a sleek, responsive user interface emphasizing premium user experience and trust."
+    ],
+    tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Tailwind CSS"],
+    github: "https://github.com/Amansharmacs1/RentWheels"
   },
   {
     title: "EduLife",
+    subtitle: "AI-POWERED VOICE ASSISTANT",
     year: "2025",
     image: "./edulife.png",
     description: "AI-powered voice assistant designed for students to improve productivity and automate academic tasks.",
-    features: ["Speech Recognition", "NLP-Based Interaction", "Workflow Automation", "Voice Command Processing", "Research Publication"],
-    tech: ["Python", "Speech Recognition", "AI/ML"],
+    features: [
+      "Designed and developed a sophisticated AI voice assistant tailored to automate academic tasks for students.",
+      "Integrated Natural Language Processing (NLP) and robust speech recognition to process complex voice commands.",
+      "Successfully documented and published research findings regarding the implementation and efficiency of the assistant."
+    ],
+    tech: ["Python", "Speech Recognition", "AI/ML", "NLP"],
     github: "https://github.com/Amansharmacs1/EDULIFE-ai-voice-assistant"
   },
   {
     title: "EventSphere",
+    subtitle: "COMPREHENSIVE EVENT MANAGEMENT PLATFORM",
     year: "2026",
     image: "./eventsphere.png",
     description: "A comprehensive event management platform to discover, create, and manage events effortlessly.",
-    features: ["Event Discovery", "Ticketing System", "User Authentication", "Dashboard Management", "Responsive Design"],
-    tech: ["MongoDB", "Express.js", "React.js", "Node.js", "Tailwind CSS"],
+    features: [
+      "Built a fully responsive platform for discovering, creating, and managing various large-scale events.",
+      "Implemented a complete ticketing system paired with a comprehensive dashboard for event organizers.",
+      "Ensured secure user authentication and a highly intuitive user interface leveraging Tailwind CSS."
+    ],
+    tech: ["MongoDB", "Express.js", "React.js", "Node.js"],
     live: "https://event-sphere-gules.vercel.app/",
     github: "https://github.com/Amansharmacs1/EventSphere"
+  },
+  {
+    title: "Zerodha Clone",
+    subtitle: "FULL-STACK STOCK TRADING PLATFORM",
+    year: "2025",
+    image: "./zerodha.jpeg",
+    description: "Developed a full-stack stock trading platform inspired by Zerodha, providing users with a seamless experience for portfolio management, market tracking, and stock transactions.",
+    features: [
+      "Developed a full-stack trading simulation platform providing seamless portfolio management and real-time market tracking.",
+      "Engineered an interactive dashboard for simulating buy/sell orders and monitoring personal holdings.",
+      "Integrated dynamic, interactive charts using Chart.js to visualize historical and live stock movements."
+    ],
+    tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Chart.js"],
+    github: "https://github.com/Amansharmacs1/Zerodha-Clone"
   }
 ];
 
@@ -57,119 +96,101 @@ const Projects = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   return (
-    <section id="projects" className="py-20 relative">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="projects" className="py-24 relative bg-slate-50 dark:bg-black transition-colors duration-300">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 dark:text-white mb-4">Featured Projects</h2>
-          <div className="w-20 h-1 bg-primary-500 mx-auto rounded-full"></div>
+          <h2 className="text-3xl md:text-5xl font-heading font-bold text-slate-900 dark:text-white mb-6">Featured Projects</h2>
+          <div className="w-20 h-1 bg-primary-500 dark:bg-[#00d8ff] mx-auto rounded-full"></div>
         </motion.div>
 
-        <div className="space-y-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {projectsData.map((project, index) => (
             <motion.div
               key={index}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              variants={{
-                hidden: { opacity: 0, y: 100 },
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                  transition: {
-                    duration: 0.8,
-                    ease: [0.16, 1, 0.3, 1],
-                    staggerChildren: 0.1,
-                    delayChildren: 0.2
-                  }
-                }
-              }}
-              className="glass rounded-3xl overflow-hidden flex flex-col lg:flex-row group"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+              className="bg-white dark:bg-[#0a0a0a] border border-slate-200 dark:border-white/[0.05] hover:border-slate-300 dark:hover:border-white/[0.1] rounded-[2rem] p-6 sm:p-8 flex flex-col h-full group hover:bg-slate-50 dark:hover:bg-[#0f1115] transition-all duration-300 shadow-xl dark:shadow-2xl relative overflow-hidden"
             >
-              <div className="lg:w-2/5 bg-slate-200 dark:bg-slate-800 p-6 sm:p-8 flex items-center justify-center relative overflow-hidden">
-                <div className="absolute inset-0 bg-primary-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20"></div>
-                <motion.div 
-                  variants={{ hidden: { scale: 0.8, opacity: 0 }, visible: { scale: 1, opacity: 1, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } } }}
-                  className="w-full aspect-video rounded-xl shadow-2xl bg-white dark:bg-slate-900 overflow-hidden relative z-10 transform group-hover:scale-105 transition-transform duration-500 flex items-center justify-center"
-                >
-                  {project.image ? (
-                      <img 
-                        src={project.image} 
-                        alt={project.title} 
-                        className={`w-full h-full cursor-pointer ${project.title === 'otpcraft' ? 'object-contain object-center bg-slate-900' : 'object-cover object-top'}`}
-                        onClick={() => setSelectedImage(project.image)}
-                      />
-                  ) : (
-                    <span className="text-3xl font-heading font-bold text-slate-300 dark:text-slate-700">{project.title}</span>
-                  )}
-                </motion.div>
+              {/* Subtle hover glow effect (Dark mode only) */}
+              <div className="absolute top-0 right-0 w-64 h-64 bg-primary-500 dark:bg-[#00d8ff] opacity-0 group-hover:opacity-[0.03] blur-[80px] rounded-full transition-opacity duration-500 pointer-events-none"></div>
+
+              {/* Header Row */}
+              <div className="flex justify-between items-start mb-6">
+                <span className="text-[10px] sm:text-xs font-bold text-primary-600 dark:text-[#00d8ff] uppercase tracking-widest w-3/4 leading-relaxed">
+                  {project.subtitle}
+                </span>
+                {project.github && (
+                  <a 
+                    href={project.github} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 rounded-full bg-slate-50 dark:bg-[#161616] flex items-center justify-center text-slate-400 hover:text-slate-700 dark:hover:text-white transition-colors border border-slate-200 dark:border-white/[0.05] hover:border-slate-300 dark:hover:border-white/[0.2] flex-shrink-0 relative z-10"
+                  >
+                    <Github size={18} />
+                  </a>
+                )}
               </div>
-              <div className="lg:w-3/5 p-6 sm:p-8 md:p-10 flex flex-col justify-center">
-                <motion.div variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0 } }} className="flex justify-between items-start mb-4">
-                  <h3 className="text-2xl font-heading font-bold text-slate-900 dark:text-white group-hover:text-primary-500 transition-colors">
-                    {project.title}
-                  </h3>
-                  <span className="text-sm font-medium px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded-full">
-                    {project.year}
-                  </span>
-                </motion.div>
+
+              {/* Title & Image */}
+              <div className="mb-6">
+                <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-6">
+                  {project.title}
+                </h3>
                 
-                <motion.p variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0 } }} className="text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
-                  {project.description}
-                </motion.p>
-
-                <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} className="mb-6">
-                  <h4 className="text-sm font-semibold text-slate-900 dark:text-white mb-2 uppercase tracking-wider">Key Features</h4>
-                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                    {project.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
-                        <span className="w-1.5 h-1.5 rounded-full bg-primary-500"></span>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </motion.div>
-
-                <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}>
-                  <h4 className="text-sm font-semibold text-slate-900 dark:text-white mb-2 uppercase tracking-wider">Tech Stack</h4>
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {project.tech.map((tech, idx) => (
-                      <span key={idx} className="px-3 py-1 bg-primary-50 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 text-xs font-medium rounded-full">
-                        {tech}
-                      </span>
-                    ))}
+                {project.image && (
+                  <div className="w-full aspect-video rounded-2xl overflow-hidden bg-slate-100 dark:bg-[#111] border border-slate-200 dark:border-white/[0.05] relative z-10">
+                    <img 
+                      src={project.image} 
+                      alt={project.title} 
+                      className="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500 cursor-pointer"
+                      onClick={() => setSelectedImage(project.image)}
+                    />
                   </div>
-                  
-                  <div className="flex flex-wrap gap-4 mt-2">
-                    {project.github && (
-                      <a 
-                        href={project.github} 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        className="inline-flex items-center gap-2 px-5 py-2.5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 hover:bg-primary-500 dark:hover:bg-primary-500 hover:text-white dark:hover:text-white rounded-xl font-medium transition-colors w-fit shadow-md hover:scale-105 active:scale-95"
-                      >
-                        <Github size={18} /> View on GitHub
-                      </a>
-                    )}
-                    
-                    {project.live && (
-                      <a 
-                        href={project.live} 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        className="inline-flex items-center gap-2 px-5 py-2.5 bg-primary-500 text-white hover:bg-black dark:hover:bg-white dark:hover:text-black rounded-xl font-medium transition-colors w-fit shadow-md hover:scale-105 active:scale-95"
-                      >
-                        <ExternalLink size={18} /> Live Demo
-                      </a>
-                    )}
-                  </div>
-                </motion.div>
+                )}
+              </div>
+
+              {/* Features */}
+              <ul className="space-y-4 mb-8 flex-grow relative z-10">
+                {project.features.map((feature, idx) => (
+                  <li key={idx} className="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                    <svg className="w-5 h-5 text-primary-500 dark:text-teal-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              {/* Tech Stack */}
+              <div className="mt-auto pt-6 border-t border-slate-200 dark:border-white/[0.05] relative z-10">
+                <h4 className="text-[10px] font-bold text-slate-500 mb-4 flex items-center gap-2">
+                  <span className="font-mono">{'</>'}</span> TECH STACK
+                </h4>
+                <div className="flex flex-wrap gap-2">
+                  {project.tech.map((t, idx) => (
+                    <span key={idx} className="px-3 py-1.5 bg-slate-100 dark:bg-[#111] border border-slate-200 dark:border-white/[0.05] text-[10px] font-semibold tracking-wider text-slate-600 dark:text-slate-400 rounded-lg">
+                      {t.toUpperCase()}
+                    </span>
+                  ))}
+                  {project.live && (
+                    <a 
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer" 
+                      className="px-3 py-1.5 bg-primary-50 dark:bg-[#00d8ff]/10 border border-primary-200 dark:border-[#00d8ff]/20 text-[10px] font-bold tracking-wider text-primary-600 dark:text-[#00d8ff] rounded-lg hover:bg-primary-100 dark:hover:bg-[#00d8ff]/20 transition-colors ml-auto flex items-center gap-1"
+                    >
+                      LIVE DEMO <ExternalLink size={12} />
+                    </a>
+                  )}
+                </div>
               </div>
             </motion.div>
           ))}
