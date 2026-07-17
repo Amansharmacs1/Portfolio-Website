@@ -45,6 +45,7 @@ const projectsData = [
       "Designed a sleek, responsive user interface emphasizing premium user experience and trust."
     ],
     tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Tailwind CSS"],
+    live: "https://rent-wheels-omega.vercel.app/",
     github: "https://github.com/Amansharmacs1/RentWheels"
   },
   {
@@ -89,6 +90,51 @@ const projectsData = [
     ],
     tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Chart.js"],
     github: "https://github.com/Amansharmacs1/Zerodha-Clone"
+  },
+  {
+    title: "NayePankh Foundation",
+    subtitle: "VOLUNTEER MANAGEMENT PORTAL",
+    year: "2026",
+    image: "./nayepankh.png",
+    description: "A comprehensive volunteer management portal designed for the NayePankh Foundation to empower volunteers and streamline NGO operations.",
+    features: [
+      "Built a dedicated portal to streamline volunteer onboarding, engagement, and management for the foundation.",
+      "Designed an intuitive, responsive user interface to track volunteer programs and community impact effectively.",
+      "Implemented a robust backend architecture for managing user roles, secure data handling, and foundation activities."
+    ],
+    tech: ["React.js", "Tailwind CSS", "Node.js", "Express.js", "MongoDB"],
+    live: "https://nayepankhfoundation-volunteers-port.vercel.app/",
+    github: "https://github.com/Amansharmacs1/nayepankhfoundation-volunteers-portal"
+  },
+  {
+    title: "TransferHub",
+    subtitle: "SECURE PEER-TO-PEER FILE SHARING",
+    year: "2026",
+    image: "./transferhub.png",
+    description: "Fast, secure, browser-based peer-to-peer file sharing powered by WebRTC. No cables, no limits, no hassle.",
+    features: [
+      "Engineered a high-speed, secure peer-to-peer file transfer platform leveraging modern WebRTC technology.",
+      "Designed a sleek, dark-themed user interface to facilitate instant, hassle-free file sharing across devices.",
+      "Ensured robust connection handling for secure and reliable direct data transfers without central servers."
+    ],
+    tech: ["React.js", "WebRTC", "Node.js", "Tailwind CSS", "Socket.io"],
+    live: "https://transfer-hub-cyan.vercel.app/",
+    github: "https://github.com/Amansharmacs1/TransferHub"
+  },
+  {
+    title: "VisionX-AI",
+    subtitle: "AMBIENT WEARABLE AI PLATFORM",
+    year: "2026",
+    image: "./visionx.png",
+    description: "An ambient wearable AI platform that maps the world around you in real-time. Engineered for absolute independence.",
+    features: [
+      "Built a cutting-edge platform for an ambient wearable device focusing on real-time spatial mapping.",
+      "Engineered advanced AI integration to provide seamless environmental awareness and independence.",
+      "Designed a sleek, futuristic interface showcasing VisionOS capabilities and live tracking status."
+    ],
+    tech: ["React.js", "Three.js", "AI/ML", "Node.js", "Tailwind CSS"],
+    live: "https://vision-x-ai-pi.vercel.app/",
+    github: "https://github.com/Amansharmacs1/VisionX-AI"
   }
 ];
 
