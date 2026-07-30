@@ -19,19 +19,19 @@ const projectsData = [
     github: "https://github.com/Amansharmacs1/AuditAi"
   },
   {
-    title: "WanderStay",
-    subtitle: "FULL-STACK TRAVEL ACCOMMODATION PLATFORM",
-    year: "2025",
-    image: "./wanderstay.png",
-    description: "Full-stack travel accommodation platform inspired by Airbnb.",
+    title: "DreamNest AI",
+    subtitle: "AI-POWERED ARCHITECTURAL DESIGN",
+    year: "2026",
+    image: "./dreamnest.png",
+    description: "An AI-powered design platform that transforms ideas into precise 2D floor plans instantly based on plot dimensions and preferences.",
     features: [
-      "Built a comprehensive travel accommodation platform inspired by Airbnb with advanced property listing and booking features.",
-      "Designed a robust client-server architecture utilizing Docker containerization for reliable deployment.",
-      "Implemented JWT authentication, role-based access control, and automated CI/CD pipelines via GitHub Actions."
+      "Built an AI-powered design platform that instantly generates precise 2D floor plans from user preferences.",
+      "Engineered an intelligent layout engine that takes plot dimensions and outputs optimized architectural designs.",
+      "Designed a clean, user-friendly interface to make professional floor planning accessible to everyone."
     ],
-    tech: ["MongoDB", "Express.js", "React.js", "Node.js", "Docker"],
-    live: "https://wanderstay-ot8f.onrender.com/",
-    github: "https://github.com/Amansharmacs1/WanderStay"
+    tech: ["React.js", "AI/ML", "Node.js", "Tailwind CSS", "Express.js"],
+    live: "https://dream-nest-ai-1rdt-xi.vercel.app/",
+    github: "https://github.com/Amansharmacs1/DreamNest-AI"
   },
   {
     title: "RentWheels",
@@ -92,19 +92,19 @@ const projectsData = [
     github: "https://github.com/Amansharmacs1/Zerodha-Clone"
   },
   {
-    title: "NayePankh Foundation",
-    subtitle: "VOLUNTEER MANAGEMENT PORTAL",
-    year: "2026",
-    image: "./nayepankh.png",
-    description: "A comprehensive volunteer management portal designed for the NayePankh Foundation to empower volunteers and streamline NGO operations.",
+    title: "WanderStay",
+    subtitle: "FULL-STACK TRAVEL ACCOMMODATION PLATFORM",
+    year: "2025",
+    image: "./wanderstay.png",
+    description: "Full-stack travel accommodation platform inspired by Airbnb.",
     features: [
-      "Built a dedicated portal to streamline volunteer onboarding, engagement, and management for the foundation.",
-      "Designed an intuitive, responsive user interface to track volunteer programs and community impact effectively.",
-      "Implemented a robust backend architecture for managing user roles, secure data handling, and foundation activities."
+      "Built a comprehensive travel accommodation platform inspired by Airbnb with advanced property listing and booking features.",
+      "Designed a robust client-server architecture utilizing Docker containerization for reliable deployment.",
+      "Implemented JWT authentication, role-based access control, and automated CI/CD pipelines via GitHub Actions."
     ],
-    tech: ["React.js", "Tailwind CSS", "Node.js", "Express.js", "MongoDB"],
-    live: "https://nayepankhfoundation-volunteers-port.vercel.app/",
-    github: "https://github.com/Amansharmacs1/nayepankhfoundation-volunteers-portal"
+    tech: ["MongoDB", "Express.js", "React.js", "Node.js", "Docker"],
+    live: "https://wanderstay-ot8f.onrender.com/",
+    github: "https://github.com/Amansharmacs1/WanderStay"
   },
   {
     title: "TransferHub",
