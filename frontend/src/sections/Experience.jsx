@@ -4,13 +4,24 @@ import { X } from 'lucide-react';
 
 const experienceData = [
   {
-    role: "Joint Secretary",
-    company: "ISTE Student Chapter",
-    period: "2025 – Present",
-    responsibilities: [
-      "Organized technical workshops",
-      "Managed student engagement",
-      "Coordinated events"
+    company: "Chitkara University ISTE Student Chapter",
+    roles: [
+      {
+        title: "President",
+        period: "Sep 2026 - Present · 1 mo",
+        description: "Leading the ISTE Student Chapter by managing the core team, organizing technical events, workshops, hackathons and expert talks, and fostering innovation, collaboration, leadership and professional growth.",
+        skills: "Leadership, Team Management and +4 skills"
+      },
+      {
+        title: "Joint Secretary",
+        period: "Aug 2025 - Sep 2026 · 1 yr 2 mos",
+        description: "Representing and coordinating student activities under ISTE, managing events, and fostering technical & leadership growth among members.",
+        skills: "Team Building, Event Management and +3 skills"
+      },
+      {
+        title: "Core Member",
+        period: "Nov 2024 - Aug 2025 · 10 mos"
+      }
     ],
     images: ["./iste1.jpeg", "./iste2.jpeg", "./iste3.jpeg", "./iste4.jpeg"]
   },
@@ -57,26 +68,61 @@ const Experience = () => {
               <span className="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-primary-500 ring-4 ring-white dark:ring-slate-950"></span>
               
               <div className="glass p-6 sm:p-8 rounded-2xl hover:-translate-y-1 transition-transform duration-300">
-                <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
-                  <div>
-                    <h3 className="text-2xl font-heading font-bold text-slate-900 dark:text-white">
-                      {exp.role}
-                    </h3>
-                    <div className="text-primary-500 font-medium text-lg mt-1">{exp.company}</div>
-                  </div>
-                  <div className="mt-2 md:mt-0 text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-full text-sm font-medium w-fit">
-                    {exp.period}
-                  </div>
-                </div>
-                
-                <h4 className="text-sm font-semibold text-slate-900 dark:text-white mt-6 mb-3 uppercase tracking-wider">Responsibilities</h4>
-                <ul className="space-y-2">
-                  {exp.responsibilities.map((task, idx) => (
-                    <li key={idx} className="flex items-start gap-3 text-slate-600 dark:text-slate-300">
-                      <span className="text-primary-500 mt-1">✓</span> {task}
-                    </li>
-                  ))}
-                </ul>
+                {exp.roles ? (
+                  <>
+                    <div className="mb-6">
+                      <h3 className="text-2xl font-heading font-bold text-slate-900 dark:text-white">
+                        {exp.company}
+                      </h3>
+                    </div>
+                    <div className="relative border-l-2 border-slate-200 dark:border-slate-700 ml-3 space-y-8">
+                      {exp.roles.map((r, i) => (
+                        <div key={i} className="relative pl-8">
+                          <span className="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-300 dark:bg-slate-600 ring-4 ring-white dark:ring-slate-900"></span>
+                          <h4 className="text-xl font-bold text-slate-800 dark:text-white">{r.title}</h4>
+                          <div className="text-sm text-slate-500 dark:text-slate-400 font-medium my-1">
+                            {r.period}
+                          </div>
+                          {r.description && (
+                            <p className="text-slate-600 dark:text-slate-300 mt-3 text-sm leading-relaxed">{r.description}</p>
+                          )}
+                          {r.skills && (
+                            <p className="text-sm font-semibold text-slate-700 dark:text-slate-300 mt-3 flex items-center gap-1.5">
+                              <span className="text-primary-500">💎</span> {r.skills}
+                            </p>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                      <div>
+                        <h3 className="text-2xl font-heading font-bold text-slate-900 dark:text-white">
+                          {exp.role}
+                        </h3>
+                        <div className="text-primary-500 font-medium text-lg mt-1">{exp.company}</div>
+                      </div>
+                      <div className="mt-2 md:mt-0 text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-full text-sm font-medium w-fit">
+                        {exp.period}
+                      </div>
+                    </div>
+                    
+                    {exp.responsibilities && (
+                      <>
+                        <h4 className="text-sm font-semibold text-slate-900 dark:text-white mt-6 mb-3 uppercase tracking-wider">Responsibilities</h4>
+                        <ul className="space-y-2">
+                          {exp.responsibilities.map((task, idx) => (
+                            <li key={idx} className="flex items-start gap-3 text-slate-600 dark:text-slate-300">
+                              <span className="text-primary-500 mt-1">✓</span> {task}
+                            </li>
+                          ))}
+                        </ul>
+                      </>
+                    )}
+                  </>
+                )}
 
                 {exp.images && exp.images.length > 0 && (
                   <div className="mt-6 pt-6 border-t border-slate-200 dark:border-slate-800">

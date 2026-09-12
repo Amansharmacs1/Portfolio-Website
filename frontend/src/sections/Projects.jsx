@@ -30,7 +30,6 @@ const projectsData = [
       "Designed a clean, user-friendly interface to make professional floor planning accessible to everyone."
     ],
     tech: ["React.js", "AI/ML", "Node.js", "Tailwind CSS", "Express.js"],
-    live: "https://dream-nest-ai-1rdt-xi.vercel.app/",
     github: "https://github.com/Amansharmacs1/DreamNest-AI"
   },
   {
