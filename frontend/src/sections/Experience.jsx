@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X } from 'lucide-react';
+import { X, ExternalLink } from 'lucide-react';
 
 const experienceData = [
   {
@@ -112,13 +112,24 @@ const Experience = () => {
                     {exp.responsibilities && (
                       <>
                         <h4 className="text-sm font-semibold text-slate-900 dark:text-white mt-6 mb-3 uppercase tracking-wider">Responsibilities</h4>
-                        <ul className="space-y-2">
+                        <ul className="space-y-2 mb-4">
                           {exp.responsibilities.map((task, idx) => (
                             <li key={idx} className="flex items-start gap-3 text-slate-600 dark:text-slate-300">
                               <span className="text-primary-500 mt-1">✓</span> {task}
                             </li>
                           ))}
                         </ul>
+                        
+                        {exp.link && (
+                          <a 
+                            href={exp.link} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 px-4 py-2 mt-2 text-sm font-medium text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/20 hover:bg-primary-100 dark:hover:bg-primary-900/40 rounded-lg transition-colors border border-primary-200 dark:border-primary-800/30 w-fit"
+                          >
+                            View Post <ExternalLink size={16} />
+                          </a>
+                        )}
                       </>
                     )}
                   </>
