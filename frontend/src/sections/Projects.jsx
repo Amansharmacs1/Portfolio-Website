@@ -19,18 +19,18 @@ const projectsData = [
     github: "https://github.com/Amansharmacs1/AuditAi"
   },
   {
-    title: "DreamNest AI",
-    subtitle: "AI-POWERED ARCHITECTURAL DESIGN",
+    title: "WA-CRM Intelligence",
+    subtitle: "AI-POWERED LEAD INTELLIGENCE FOR WHATSAPP",
     year: "2026",
-    image: "./dreamnest.png",
-    description: "An AI-powered design platform that transforms ideas into precise 2D floor plans instantly based on plot dimensions and preferences.",
+    image: "./wacrm.jpg",
+    description: "An AI-powered revenue intelligence platform and Chrome extension designed to organize WhatsApp leads, detect intent & sentiment, and automate CRM tracking.",
     features: [
-      "Built an AI-powered design platform that instantly generates precise 2D floor plans from user preferences.",
-      "Engineered an intelligent layout engine that takes plot dimensions and outputs optimized architectural designs.",
-      "Designed a clean, user-friendly interface to make professional floor planning accessible to everyone."
+      "Built a consent-first Manifest V3 Chrome extension connecting active WhatsApp Web conversations with a centralized CRM dashboard.",
+      "Engineered an AI engine for sentiment analysis, hot-lead alerts, intent categorization, and automated follow-up reminders.",
+      "Earned a Top-10 finish among 65+ teams at the 36-hour Code With Bharat 3.0 national hackathon with Team Nexus Flow."
     ],
-    tech: ["React.js", "AI/ML", "Node.js", "Tailwind CSS", "Express.js"],
-    github: "https://github.com/Amansharmacs1/DreamNest-AI"
+    tech: ["React.js", "Chrome Extension", "Tailwind CSS", "Node.js", "Supabase", "AI/ML"],
+    github: "https://github.com/Amansharmacs1/wa-crm-intelligence"
   },
   {
     title: "RentWheels",
