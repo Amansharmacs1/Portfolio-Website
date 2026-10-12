@@ -4,7 +4,7 @@ import { Trophy, Code, Briefcase, Award, GraduationCap, FileBadge, CheckCircle, 
 
 const achievementsData = [
   { icon: <Trophy size={24} />, title: "Led a Team to Top 10 among 70 Teams", subtitle: "National Level Hackathon" },
-  { icon: <Code size={24} />, title: "300+ Problems Solved", subtitle: "on LeetCode" },
+  { icon: <Code size={24} />, title: "350+ Problems Solved", subtitle: "on LeetCode" },
   { icon: <GraduationCap size={24} />, title: "CGPA: 9.58/10", subtitle: "Chitkara University" },
   { icon: <Briefcase size={24} />, title: "Built Full Stack Projects", subtitle: "MERN Stack & AI" },
   { icon: <Award size={24} />, title: "Leadership Roles", subtitle: "Unstop & ISTE" },
